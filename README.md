@@ -1,4 +1,4 @@
-# Challenge-01
+# Challenge
 
 Abilio Krismanuel
-Challenge-01
+Challenge
