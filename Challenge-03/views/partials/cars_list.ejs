@@ -1,0 +1,22 @@
+<div class="container-fluid row row-cols-2 row-cols-md-2 g-4">
+  <% cars.forEach(i => { %>
+  <div class="card bg-white">
+    <img src="<%= i.image %>" alt="" />
+    <p class="mb-2"><%= i.name %> / <%= i.tipe%></p>
+    <p><b><%= i.price %></b></p>
+    <p>
+      <img src="images/icons/fi_key.svg" alt="" /> <%= i.start_rent %> - <%=
+      i.end_rent %>
+    </p>
+    <p><img src="images/icons/fi_clock.svg" alt="" /><%= i.time %></p>
+    <div class="card-btn d-flex">
+      <button type="submit" class="btn btn-outline-danger me-3 flex-fill">
+        <img src="images/icons/fi_trash.svg" alt="" /> Delete
+      </button>
+      <button type="submit" class="btn btn-info flex-fill">
+        <img src="images/icons/fi_edit.svg" alt="" /> Edit
+      </button>
+    </div>
+  </div>
+  <% }); %>
+</div>

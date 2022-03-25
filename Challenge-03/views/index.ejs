@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs'); %>
+
+  <body class="d-flex">
+    <div class="gambar bg-darkblue">
+      <img src="images/car_login.png" alt="" />
+    </div>
+    <div class="formnya col bg-white">
+      <form
+        class="form d-flex flex-column p-5"
+      >
+        <img src="images/logo2.png" style="width: 8rem" />
+        <h3 class="my-5"><b>Welcome, Admin BCR</b></h3>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="admin@mail.com"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="************"
+          />
+        </div>
+
+        <a href="/dashboards" class="btn btn-darkblue mt-4">Sign In</a>
+      </form>
+    </div>
+  </body>
+</html>

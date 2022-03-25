@@ -1,0 +1,89 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#sidebar .nav-item:hover{
+  background-color: #1b38bb;
+}
+
+.border-darkblue{border-color:#0D28A6!important}
+/* login */
+
+
+/* navbar */
+.navbar .profil{
+  margin-right: 7rem;
+
+}
+
+.left-menu{
+  width: 28vh;
+}
+
+.gambar img{
+  background-size: cover;
+  height: 100vh;
+  width: 120%;
+}
+
+.formnya{
+  width: 30.125rem;
+  height: 100vh;
+}
+
+.form{
+  margin-top: 8rem;
+}
+
+.sidebar {
+  width: 5rem;
+  height: 100%;
+}
+
+.card img{
+  width: 270px;
+  height: 160px;
+  left: 16px;
+  top: 31px;
+}  
+
+
+.card{
+  width: 351px !important;
+  height: 482px  ;
+  margin-right: 1.3rem;
+  padding: 60px;
+}
+
+.card p img{
+  width: 16.61px;
+  height: 15.85px;
+}
+
+.card .card-btn button {
+  width: 143.5px;
+  height: 48px;
+
+}
+
+.card .card-btn button img{
+  width: 13.5px;
+  height: 13.5px;
+
+}
+
+/* cars */
+.dalamnav{
+  min-height: 100vh;
+
+}
+
+.dalamnav1{
+  width: 13rem;
+}
+
+/* adacars */

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head.ejs'); %>
+  <body class="d-flex">
+    <%- include("partials/sidebar.ejs"); %>
+    <div class="flex-grow-1">
+      <%- include("partials/navbar.ejs"); %>
+
+      <div class="d-flex bg-grey flex-grow-1">
+
+        <div class="left-menu d-flex flex-column flex-shrink-0 bg-white">
+          <h6 class="px-3 py-4 mb-0"><b>CARS</b></h6>
+          <hr class="m-0" />
+          <a href="#" class="px-3 py-2 text-decoration-none text-dark"
+            ><b>List Car</b></a
+          >
+        </div>
+
+        <main class="p-4 w-100">
+          <nav class="mb-4">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="#" class="text-decoration-none text-dark"
+                  ><b>Cars</b></a
+                >
+              </li>
+              <li class="breadcrumb-item" aria-current="page">List car</li>
+            </ol>
+          </nav>
+
+          <div class="d-flex justify-content-between">
+            <h5 class="mb-4"><b>List Car</b></h5>
+            <a href="/addcars"
+              ><button type="submit" class="btn btn-darkblue">
+                <img src="images/icons/fi_plus.svg" alt="" /> Add New Car
+              </button></a
+            >
+          </div>
+
+          <div class="d-flex gap-3 mb-4">
+            <button type="submit" class="btn btn-outline-darkblue">All</button>
+            <button type="submit" class="btn btn-outline-darkblue">
+              Small
+            </button>
+            <button type="submit" class="btn btn-outline-darkblue">
+              Medium
+            </button>
+            <button type="submit" class="btn btn-outline-darkblue">
+              Large
+            </button>
+          </div>
+
+          <%- include("partials/cars_list.ejs") %>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
