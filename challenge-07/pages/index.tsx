@@ -25,7 +25,6 @@ const Home = () => {
               </ul>
               <button
                 className="mx-4 rounded bg-red-600 p-2 font-medium text-white"
-                onClick={() => handleLogout()}
               >
                 {" "}
                 Logout
