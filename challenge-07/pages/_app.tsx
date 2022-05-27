@@ -1,11 +1,9 @@
 import "../styles/globals.css";
 import Layout from "../components/layout/main";
 
-function MyApp({ Component, pageProps, router }) {
+function MyApp({ Component, pageProps}) {
   return (
-    <Layout router={router}>
-      <Component {...pageProps} key={router.route} />
-    </Layout>
+      <Component {...pageProps} />
   );
 }
 
