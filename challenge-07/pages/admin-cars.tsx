@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-key */
 /* eslint-disable react-hooks/rules-of-hooks */
 import Main from "../components/layout/main";
@@ -5,10 +6,33 @@ import Cardcar from "../components/cardcar";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const dashboardcars = () => {
-    const [carList, setCarList] = useState([]);
+  let { isAdd } = useRouter().query;
+  const [carList, setCarList] = useState([]);
+  const [SuccessAlert, setSuccessAlert] = useState(false);
+  
+  const successAlert = (
+    <div
+      className="font-bold p-4 mb-4 text-white bg-green-600 border shadow-lg rounded-lg w-7/12 mx-auto flex justify-between"
+      role="alert"
+    >
+      <p>Add Car Success!</p>{" "}
+      <button className="" onClick={() => setSuccessAlert(false)}>
+        X
+      </button>
+    </div>
+  );
+  // alert
+  useEffect(() => {
+    if (isAdd === `true`) {
+      setSuccessAlert(true);
+    }
+  }, []);
 
+
+  //get car list
   async function GetAllCars() {
     try {
       const response = await fetch(
@@ -27,6 +51,7 @@ const dashboardcars = () => {
 
   return (
     <Main>
+      {isAdd && SuccessAlert ? successAlert : <></>}
       <ol
         className="flex items-center mb-7 space-x-1 md:space-x-3"
         aria-label="Breadcrumb"
@@ -57,7 +82,6 @@ const dashboardcars = () => {
         </li>
       </ol>
 
-      {/* <!-- TITLE & ADD BUTTON --> */}
       <div className="flex justify-between mb-3">
         <h1 className="text-2xl">
           <b>List Car</b>
@@ -77,7 +101,7 @@ const dashboardcars = () => {
         </Link>
       </div>
 
-      {/* <!-- FILTER BUTTON GROUP --> */}
+      {/* <!-- BUTTON GROUP --> */}
       <div className="flex gap-4 mb-7">
         <button className="px-3 py-2 border-2 border-darkblue text-darkblue bg-blue-200 rounded">
           <b>All</b>

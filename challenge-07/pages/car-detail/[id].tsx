@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../../components/navbar";
 import { useRouter } from "next/router";
 import Modalimage from "react-modal-image";
+import Image from "next/image";
 
 export default function cardetail() {
   const { id } = useRouter().query;
@@ -67,10 +68,11 @@ export default function cardetail() {
                 <h4 className="text-lg font-bold">
                   Refund, Reschedule, Overtime
                 </h4>
-                <img
-                  className="w-5"
+                <Image
                   src="/images/icon/arrow_up.svg"
                   alt="arrow_up"
+                  width={5}
+                  height={5}
                 />
               </div>
 
@@ -98,43 +100,50 @@ export default function cardetail() {
           </section>
 
           <div className="ml-auto">
-            {/* <Link href={`/pembayaran/${car.id}`}>
-            </Link> */}
+            <Link href="pembayaran">
+              <button className="h-10 py-2 px-3 text-white bg-green-500 rounded-sm">
+                <b>Lanjutkan Pembayaran</b>
+              </button>
+            </Link>
           </div>
         </div>
 
         <aside className="p-6 border-2 border-bgGrey rounded-lg h-auto lg:w-1/2">
           {/* <img className="mx-auto" src={car.image} alt="Car" /> */}
-          <Modalimage
+          {/* <Modalimage
             small = {`https://firebasestorage.googleapis.com/v0/b/rent-car-507f6.appspot.com/o/1653195266917-dan-gold-N7RiDzfF2iw-unsplash.jpg?alt=media`}
             large={`https://firebasestorage.googleapis.com/v0/b/rent-car-507f6.appspot.com/o/1653195266917-dan-gold-N7RiDzfF2iw-unsplash.jpg?alt=media`}
             alt="Car"
-          />
+          /> */}
+          <Modalimage small={car.image} large={car.image} alt="Car" />
           <h4 className="font-bold mb-2 mt-12">
             {car.name} / {car.category}
           </h4>
           <div className="flex flex-wrap mb-12 text-gray-500">
             <p className="flex flex-nowarp mr-4">
-              <img
-                className="mr-2"
+              <Image
                 src="/images/icon/fi_users.svg"
                 alt="user"
+                width={20}
+                height={20}
               />
               4-Orang
             </p>
             <p className="flex flex-nowarp mr-4">
-              <img
-                className="mr-2"
+              <Image
                 src="/images/icon/fi_settings.svg"
                 alt="car_type"
+                width={20}
+                height={20}
               />
               Manual
             </p>
             <p className="flex flex-nowarp mr-4">
-              <img
-                className="mr-2"
+              <Image
                 src="/images/icon/fi_calendar.svg"
                 alt="date"
+                width={20}
+                height={20}
               />
               Tahun-2020
             </p>
@@ -143,6 +152,11 @@ export default function cardetail() {
             <p>Total</p>
             <p className="text-lg font-bold">Rp. {car.price}</p>
           </div>
+          <Link href="pembayaran">
+            <button className="mt-5 flex justify-center bg-green-500 text-white rounded-sm py-">
+              <b>Lanjutkan Pembayaran</b>
+            </button>
+          </Link>
         </aside>
       </div>
     </>
